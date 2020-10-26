@@ -9,6 +9,9 @@ Exercises
 5. Add width parameter.
 
 """
+# A01701879 María José Díaz Sánchez 
+# A00829556 Santiago Gonzalez Irigoyen
+# Este código funciona permite dibujar líneas, cuadrados, círculos y triángulos de diferentes colores
 
 from turtle import *
 from freegames import vector
@@ -35,7 +38,17 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(35):
+        forward((end.x - start.x)/4)
+        left(10.205)
+    
+    end_fill()
+     
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
@@ -86,11 +99,17 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
+#lista de colores y sus teclas 
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('orange'), 'O')#color añadido naranja
+onkey(lambda: color('purple'), 'P')#color añadido morado
+onkey(lambda: color('yellow'), 'Y')#color añadido amarillo
+onkey(lambda: color('pink'), 'N')#color añadido rosa
+#lista de las figuras y sus teclas
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
