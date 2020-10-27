@@ -43,9 +43,11 @@ def circle(start, end):
     down()
     begin_fill()
 
-    for count in range(35):
+    for count in range(130):
+        speed(10)
         forward((end.x - start.x)/4)
-        left(10.205)
+        speed(10)
+        left(2.86)
     
     end_fill()
      
