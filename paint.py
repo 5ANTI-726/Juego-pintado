@@ -18,6 +18,7 @@ from freegames import vector
 
 def line(start, end):
     "Draw line from start to end."
+    #Esta parte hace las líneas rectas
     up()
     goto(start.x, start.y)
     down()
@@ -25,6 +26,7 @@ def line(start, end):
 
 def square(start, end):
     "Draw square from start to end."
+    #Aquí se hacen los rectángulos usando vueltas por grados
     up()
     goto(start.x, start.y)
     down()
@@ -38,6 +40,7 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
+    #Aquí está el código del círculo, con un speed para hacerlo más rápido
     up()
     goto(start.x, start.y)
     down()
@@ -54,6 +57,7 @@ def circle(start, end):
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
+    #Similar al cuadrado el código del rectángulo hace vueltas por ángulos
     up()
     goto(start.x, start.y)
     down()
@@ -69,6 +73,7 @@ def rectangle(start, end):
 
 def triangle(start, end):
     "Draw triangle from start to end."
+    #El código del triángulo también usa vueltas por ángulos
     up()
     goto(start.x, start.y)
     down()
@@ -82,6 +87,7 @@ def triangle(start, end):
 
 def tap(x, y):
     "Store starting point or draw shape."
+    #funcion para iniciar
     start = state['start']
 
     if start is None:
@@ -100,7 +106,7 @@ state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
-onkey(undo, 'u')
+onkey(undo, 'u')#comando para deshacer dibujo
 #lista de colores y sus teclas 
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
